@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover" class="dark">
+		<nav class="bg-slate-200 dark:bg-slate-900 dark:text-white">
+			<div class="px-8 py-5 max-w-7xl mx-auto">
+				<div class="flex justify-between">
+					<!-- Logo -->
+					<div class="flex space-x-4 text-purple-500 px-2">
+						<a href="/" class="flex space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+								<path d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z" />
+							</svg>
+							
+							<span class="font-bold">JobScout</span>
+						</a>
+					</div>
+
+					<!-- Search/Employers -->
+					<div class="hidden md:flex items-center space-x-4">
+						<a
+							href="/search"
+							class="
+								dark:text-white hover:text-gray-300
+								transition duration-300
+							"
+						>
+							Search
+						</a>
+						
+						<a
+							href="/employers"
+							class="
+								dark:text-white hover:text-gray-300
+								transition duration-300
+							"
+						>
+							Employers
+						</a>
+					</div>
+
+					<div class="hidden md:flex space-x-4">
+						<a
+							href="/login"
+							class="
+								text-white
+								bg-gradient-to-r
+								to-pink-400 from-purple-500
+								rounded-full
+								p-1 px-4
+							"
+						>
+							Login / Sign Up
+						</a>
+					</div>
+
+					<!-- Hamburger Menu Toggler -->
+					<div class="md:hidden flex items-center" id="hamburger-toggler">
+						<button>
+							<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+								<path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+							</svg>							  
+						</button>
+					</div>
+				</div>
+
+				<!-- Hamburger Menu -->
+				<div
+					id="hamburger-menu"
+					class="
+						mt-2
+						py-1.5
+						space-y-0.5
+						bg-slate-800
+						rounded-lg
+						hidden md:hidden
+					"
+				>
+					<a
+						href="/search"
+						class="
+							px-2 py-1
+							text-white
+							hover:bg-slate-900
+							transition duration-300
+							block
+						"
+					>
+						Search
+					</a>
+					
+					<a
+						href="/employers"
+						class="
+							px-2 py-1
+							text-white
+							hover:bg-slate-900
+							transition duration-300
+							block
+						"
+					>
+						Employers
+					</a>
+
+					<a
+						href="/login"
+						class="
+							px-2 py-1
+							text-purple-500
+							hover:bg-purple-500
+							hover:text-white
+							transition duration-300
+							block
+						"
+					>
+						Login / Sign Up
+					</a>
+				</div>
+			</div>
+		</nav>
+
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+
+	<script>
+		const hamburgerToggler = document.querySelector('#hamburger-toggler');
+		const hamburgerMenu = document.querySelector('#hamburger-menu');
+
+		hamburgerToggler.addEventListener('click', () => {
+			hamburgerMenu.classList.toggle('hidden');
+		});
+	</script>
+</html>
