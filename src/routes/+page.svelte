@@ -1,4 +1,4 @@
-<div class="px-5 py-32 text-center bg-slate-200 dark:bg-slate-900 dark:text-white">
+<div class="px-5 py-32 text-center bg-slate-900 text-white">
     <h2 class="font-extrabold text-6xl">
         Find
         <span
